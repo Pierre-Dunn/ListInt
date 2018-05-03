@@ -1,6 +1,6 @@
 #include<iostream>
 #include"ListInt.h"
-#include<conio.h>
+
 using namespace std;
 void PrintList(ListInt& list, int number)
 {
@@ -42,7 +42,7 @@ int main()
 	list2.insert(list2.head(),1000);
 	cout << "list2.insert called with value = 1000" << endl;
 	PrintList(list2, 2);
-    _getch();
+    
 	
 	return 0;
 }
