@@ -24,13 +24,12 @@ public:
 	
 	ListInt();
 	~ListInt();
-	size_t getSize() const { return _size; }
+	size_t size() const { return _size; }
 	bool empty() const { return _size == 0; }
 
 	void reverse();     
 	void grab_and_append(ListInt& from); 
-	void sort();         // отсортировать по возрастанию (можно добавить сюда
-						 // параметр - функтор сравнения на меньше для любого порядка сортировки)
+	void sort();        
 	void push_back(int val); 
 	void push_front(int val);
 	void pop_back();
@@ -73,8 +72,7 @@ public:
 	iterator insert(iterator pos, int value);  
 
 public:
-	iterator erase(iterator pos); // Обратить внимание: после удаления узла итератор позиции должен стать инвалидным
-								  // возвращает итератор указывающий на узел следующий после удаленного
+	iterator erase(iterator pos); 
 };
 
 
