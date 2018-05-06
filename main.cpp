@@ -37,8 +37,8 @@ int main()
 	cout << "reversed list1" << endl << endl;
 	list1.reverse();
 	PrintList(list1, 1);
-	cout << "List 1 size: " << list1.getSize() << endl
-		<< "List 2 size: " << list2.getSize() << endl << endl;
+	cout << "List 1 size: " << list1.size() << endl
+		<< "List 2 size: " << list2.size() << endl << endl;
 	list2.insert(list2.head(),1000);
 	cout << "list2.insert called with value = 1000" << endl;
 	PrintList(list2, 2);
