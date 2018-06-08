@@ -271,12 +271,9 @@ ListInt::iterator ListInt::iterator::operator++(int)//postincrement
 	return temp;
 }
 
-ListInt::iterator & ListInt::iterator::operator=(int index)
+ListInt::iterator & ListInt::iterator::operator=(const ListInt::iterator& it)
 {
-	for (int i(0); i < index; i++)
-	{
-		if (this->_current->_next != NULL)
-			this->operator++();
-	}
+	if (this == &it) return *this;
+	this->_current = it._current;
 	return *this;
 }

@@ -63,7 +63,7 @@ public:
 		iterator& operator --();
 		iterator operator --(int);
 		iterator operator ++(int);
-		iterator& operator =(int index);
+		iterator& operator =(const ListInt::iterator & it);
 	};
 
 	iterator head() { return iterator(_head); }

@@ -1,6 +1,5 @@
 #include<iostream>
 #include"ListInt.h"
-
 using namespace std;
 void PrintList(ListInt& list, int number)
 {
