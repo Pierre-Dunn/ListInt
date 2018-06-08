@@ -43,7 +43,7 @@ ListInt::Node * ListInt::split(Node *head)
 	while (fast->_next && fast->_next->_next)
 	{
 		fast = fast->_next->_next;
-		slow = slow->_next;//slow->_next points to the middle of list
+		slow = slow->_next;
 	}
 	Node *second = slow->_next;
 	slow->_next = NULL;
@@ -99,8 +99,8 @@ void ListInt::push_back(int val)
 	}
 	else
 	{
-		_tail = new Node(val, _tail); // Íîâûé óçåë ñòàíîâèòñÿ õâîñòîì, åãî óêàçàòåëü prev óêàçûâàåò íà ñòàðûé õâîñò
-		_tail->_prev->_next = _tail; // Ïðåäûäóùèé óçåë ñâÿçûâàåòñÿ ñ íîâûì õâîñòîì
+		_tail = new Node(val, _tail); // ÃÃ®Ã¢Ã»Ã© Ã³Ã§Ã¥Ã« Ã±Ã²Ã Ã­Ã®Ã¢Ã¨Ã²Ã±Ã¿ ÃµÃ¢Ã®Ã±Ã²Ã®Ã¬, Ã¥Ã£Ã® Ã³ÃªÃ Ã§Ã Ã²Ã¥Ã«Ã¼ prev Ã³ÃªÃ Ã§Ã»Ã¢Ã Ã¥Ã² Ã­Ã  Ã±Ã²Ã Ã°Ã»Ã© ÃµÃ¢Ã®Ã±Ã²
+		_tail->_prev->_next = _tail; // ÃÃ°Ã¥Ã¤Ã»Ã¤Ã³Ã¹Ã¨Ã© Ã³Ã§Ã¥Ã« Ã±Ã¢Ã¿Ã§Ã»Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã± Ã­Ã®Ã¢Ã»Ã¬ ÃµÃ¢Ã®Ã±Ã²Ã®Ã¬
 	}
 	_size++;
 }
@@ -121,7 +121,7 @@ void ListInt::pop_back()
 {
 	if (empty()) return;
 	Node* temp = _tail;
-	_tail = _tail->_prev;                      // Íîâûì õâîñòîì ñòàíîâèòñÿ ïðåäøåñòâóþùèé ñòàðîìó õâîñòó óçåë
+	_tail = _tail->_prev;                      // ÃÃ®Ã¢Ã»Ã¬ ÃµÃ¢Ã®Ã±Ã²Ã®Ã¬ Ã±Ã²Ã Ã­Ã®Ã¢Ã¨Ã²Ã±Ã¿ Ã¯Ã°Ã¥Ã¤Ã¸Ã¥Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¨Ã© Ã±Ã²Ã Ã°Ã®Ã¬Ã³ ÃµÃ¢Ã®Ã±Ã²Ã³ Ã³Ã§Ã¥Ã«
 	if (_tail != NULL) _tail->_next = NULL;
 	//std::cout << temp->_value << std::endl;
 	delete temp;
@@ -132,7 +132,7 @@ void ListInt::pop_front()
 {
 	if (empty()) return;
 	Node* temp = _head;
-	_head = _head->_next;                      // Íîâîé ãîëîâîé ñòàíîâèòñÿ ñëåäóþùèé ïîñëå ñòàðîé ãîëîâû óçåë
+	_head = _head->_next;                      // ÃÃ®Ã¢Ã®Ã© Ã£Ã®Ã«Ã®Ã¢Ã®Ã© Ã±Ã²Ã Ã­Ã®Ã¢Ã¨Ã²Ã±Ã¿ Ã±Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¨Ã© Ã¯Ã®Ã±Ã«Ã¥ Ã±Ã²Ã Ã°Ã®Ã© Ã£Ã®Ã«Ã®Ã¢Ã» Ã³Ã§Ã¥Ã«
 	if(_head != NULL) _head->_prev = NULL;
 	//std::cout << temp->_value << std::endl;
 	delete temp;
@@ -145,7 +145,7 @@ void ListInt::clear()
 		pop_front();
 }
 
-ListInt::iterator ListInt::insert(iterator pos, int value)// âîçâðàùàåò ïîçèöèþ ïîñëå âñòàâëåííîé
+ListInt::iterator ListInt::insert(iterator pos, int value)// Ã¢Ã®Ã§Ã¢Ã°Ã Ã¹Ã Ã¥Ã² Ã¯Ã®Ã§Ã¨Ã¶Ã¨Ã¾ Ã¯Ã®Ã±Ã«Ã¥ Ã¢Ã±Ã²Ã Ã¢Ã«Ã¥Ã­Ã­Ã®Ã©
 {
 	if(pos._current == _head)
 	{
